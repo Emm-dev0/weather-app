@@ -1,5 +1,5 @@
 body{
-    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
     /* font-family: 'Smooch Sans', sans-serif; */
     display: flex;
     justify-content: center;
@@ -51,4 +51,8 @@ input{
 }
 .temp{
     margin-bottom: 0;
+}
+.flex{
+    display: flex;
+    align-items: center;
 }
