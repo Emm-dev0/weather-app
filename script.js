@@ -37,11 +37,15 @@ let weather = {
     }
 };
 // activates the search button
-function see() {
-    weather.search();
-    console.log('done')
-}
- seen.addEventListener("click", see);
+ 
+if (seen) {
+    seen.addEventListener("click",   
+    function () {
+        weather.search();
+        console.log('done')
+    });
+};
+ 
 // if (see) {
 //    // see.addEventListener('keyup', function(event) {
 //    //     if (event.key == 'Enter') {
@@ -50,6 +54,4 @@ function see() {
 //    // })
 // }
   
-
-
-weather.fetchWeather('Nigeria');
+weather.fetchWeather('Nigeria')
