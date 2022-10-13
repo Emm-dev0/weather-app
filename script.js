@@ -1,4 +1,4 @@
-const seen = document.querySelector('.search-button');
+const seen = document.getElementById('searchBtn');
 let weather = { 
     apiKey : "5bad05a158e5764a9cf3ed1c0be7aeb1",
 
@@ -40,10 +40,12 @@ let weather = {
  
 if (seen) {
     seen.addEventListener("click",   
-    function () {
+     () =>  {
         weather.search();
         console.log('done')
     });
+} else {
+    console.log('error');
 };
  
 // if (see) {
