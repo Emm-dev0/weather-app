@@ -1,4 +1,5 @@
 const seen = document.querySelector("#searchBtn");
+const search_bar = document.querySelector('.search-bar');
 let weather = { 
     apiKey : "5bad05a158e5764a9cf3ed1c0be7aeb1",
 
@@ -45,13 +46,14 @@ if (seen) {
         console.log('done');
         weather.search();
     });
-    seen.addEventListener('keyup', function(event) {
-        if (event.key == 'Enter') {
-            weather.search();
-        }
-    });
 } else {
     console.log('error');
 };
+//activtes the enter key to also search
+search_bar.addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        weather.search();
+    }
+});
   
 weather.fetchWeather('Nigeria')
