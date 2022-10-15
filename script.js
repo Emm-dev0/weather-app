@@ -1,4 +1,4 @@
-const seen = document.getElementById('searchBtn');
+const seen = document.querySelector("#searchBtn");
 let weather = { 
     apiKey : "5bad05a158e5764a9cf3ed1c0be7aeb1",
 
@@ -33,6 +33,7 @@ let weather = {
 
     // takes input from the search bar
     search: function() {
+        console.log(seen);
         this.fetchWeather(document.querySelector('.search-bar').value);  
     }
 };
@@ -41,19 +42,16 @@ let weather = {
 if (seen) {
     seen.addEventListener("click",   
      () =>  {
+        console.log('done');
         weather.search();
-        console.log('done')
+    });
+    seen.addEventListener('keyup', function(event) {
+        if (event.key == 'Enter') {
+            weather.search();
+        }
     });
 } else {
     console.log('error');
 };
- 
-// if (see) {
-//    // see.addEventListener('keyup', function(event) {
-//    //     if (event.key == 'Enter') {
-//    //         weather.search();
-//    //     }
-//    // })
-// }
   
 weather.fetchWeather('Nigeria')
